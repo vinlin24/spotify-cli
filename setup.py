@@ -1,16 +1,15 @@
 import os
 from setuptools import setup, find_packages
 
-# PS> $env:RELEASE_VERSION = "vX.Y.Z"
-# pip install .
-VERSION = os.environ['RELEASE_VERSION']
+with open('VERSION', 'r') as f:
+    version = f.read().strip()
 
 with open('README.md', 'r') as f:
     long_description = f.read()
 
 setup(
     name='spotify-cli',
-    version=VERSION,
+    version=version,
     author='Benj Ledesma',
     author_email='benj.ledesma@gmail.com',
     description=(
