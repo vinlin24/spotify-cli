@@ -2,11 +2,13 @@
 
 Control Spotify playback on any device through the command line.
 
+This repository is a fork of the [original repository](https://github.com/ledesmablt/spotify-cli). Due to [breaking changes in Python 3.10](https://github.com/ledesmablt/spotify-cli/issues/23#issue-1091200257), the commands `spotify auth login` and `spotify devices --switch-to <name>` would raise an `ImportError` due to the underlying PyInquirer dependency. I changed the PyInquirer dependency listed in [setup.py](setup.py) to use the GitHub repository, which is ahead of the PyPI release and supports Python 3.10. This simple fix should make this version of the application work now.
+
 ## Installation
 
 This package only supports Python 3 and above.
 ```
-$ pip3 install --upgrade spotify-cli
+$ pip install git+https://github.com/vinlin24/spotify-cli.git
 ```
 
 ## Usage
